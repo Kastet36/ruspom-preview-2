@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-06T10:13:41.200Z",
+  "checkedAt": "2026-11-06T10:32:36.547Z",
   "navigatesToCatalogue": true,
   "results": [
     {
@@ -8,7 +8,7 @@
       "sectionOverflow": false,
       "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
       "buttonRightAligned": true,
-      "copyLeftAligned": true,
+      "layoutCorrect": true,
       "allButtonsMatch": true,
       "bodyStyleMatches": true,
       "captionHeadingCount": 0
@@ -19,7 +19,7 @@
       "sectionOverflow": false,
       "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
       "buttonRightAligned": true,
-      "copyLeftAligned": true,
+      "layoutCorrect": true,
       "allButtonsMatch": true,
       "bodyStyleMatches": true,
       "captionHeadingCount": 0
@@ -30,7 +30,7 @@
       "sectionOverflow": false,
       "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
       "buttonRightAligned": true,
-      "copyLeftAligned": true,
+      "layoutCorrect": true,
       "allButtonsMatch": true,
       "bodyStyleMatches": true,
       "captionHeadingCount": 0
@@ -41,7 +41,18 @@
       "sectionOverflow": false,
       "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
       "buttonRightAligned": true,
-      "copyLeftAligned": true,
+      "layoutCorrect": true,
+      "allButtonsMatch": true,
+      "bodyStyleMatches": true,
+      "captionHeadingCount": 0
+    },
+    {
+      "width": 1300,
+      "pageOverflow": false,
+      "sectionOverflow": false,
+      "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
+      "buttonRightAligned": true,
+      "layoutCorrect": true,
       "allButtonsMatch": true,
       "bodyStyleMatches": true,
       "captionHeadingCount": 0
@@ -52,7 +63,18 @@
       "sectionOverflow": false,
       "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
       "buttonRightAligned": true,
-      "copyLeftAligned": true,
+      "layoutCorrect": true,
+      "allButtonsMatch": true,
+      "bodyStyleMatches": true,
+      "captionHeadingCount": 0
+    },
+    {
+      "width": 1668,
+      "pageOverflow": false,
+      "sectionOverflow": false,
+      "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
+      "buttonRightAligned": true,
+      "layoutCorrect": true,
       "allButtonsMatch": true,
       "bodyStyleMatches": true,
       "captionHeadingCount": 0
@@ -63,7 +85,7 @@
       "sectionOverflow": false,
       "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
       "buttonRightAligned": true,
-      "copyLeftAligned": true,
+      "layoutCorrect": true,
       "allButtonsMatch": true,
       "bodyStyleMatches": true,
       "captionHeadingCount": 0
