@@ -1,0 +1,50 @@
+name: Publish site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/configure-pages@v5
+      - name: Prepare static site
+        shell: bash
+        run: |
+          mkdir -p _site
+          cp -- *.html _site/
+          cp -R assets _site/assets
+          for directory in provided research site variants dist licenses; do
+            if [ -d "$directory" ]; then
+              cp -R "$directory" "_site/$directory"
+            fi
+          done
+          if [ -f content.json ]; then cp content.json _site/; fi
+          touch _site/.nojekyll
+          test -s _site/index.html
+          test -s _site/assets/cinema.css
+          test -s _site/assets/cinema.js
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4
