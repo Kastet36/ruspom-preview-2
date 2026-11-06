@@ -175,6 +175,52 @@
   mouseDrag(track, step);
   mouseDrag(viewerTrack, () => viewerTrack.clientWidth);
 
+  const reviewTrack = document.querySelector('.map-reviews-track');
+  if (reviewTrack) {
+    const reviewPrevious = document.querySelector('[data-review-prev]');
+    const reviewNext = document.querySelector('[data-review-next]');
+    const reviewCount = document.querySelector('.map-reviews-count');
+    const reviewStep = () => reviewTrack.children[1].offsetLeft - reviewTrack.children[0].offsetLeft;
+    const reviewMax = () => reviewTrack.scrollWidth - reviewTrack.clientWidth;
+    const scrollReview = left => reviewTrack.scrollTo({ left: Math.max(0, Math.min(reviewMax(), left)), behavior: behavior(false) });
+    function updateReviews() {
+      reviewPrevious.disabled = reviewTrack.scrollLeft < 3;
+      reviewNext.disabled = reviewMax() - reviewTrack.scrollLeft < 3;
+      reviewCount.textContent = String(Math.round(reviewTrack.scrollLeft / reviewStep()) + 1).padStart(2, '0') + ' / 05';
+    }
+    const moveReview = direction => scrollReview((Math.round(reviewTrack.scrollLeft / reviewStep()) + direction) * reviewStep());
+    reviewPrevious.addEventListener('click', () => moveReview(-1));
+    reviewNext.addEventListener('click', () => moveReview(1));
+    reviewTrack.addEventListener('scroll', updateReviews, { passive: true });
+    reviewTrack.addEventListener('keydown', event => {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      if (event.key === 'Home') scrollReview(0);
+      else if (event.key === 'End') scrollReview(reviewMax());
+      else moveReview(event.key === 'ArrowLeft' ? -1 : 1);
+    });
+    mouseDrag(reviewTrack, reviewStep);
+    let wheelTimer;
+    reviewTrack.addEventListener('wheel', event => {
+      if (event.ctrlKey) return;
+      let delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      if (event.deltaMode === 1) delta *= 16;
+      else if (event.deltaMode === 2) delta *= reviewTrack.clientWidth;
+      if (!delta || (delta < 0 && reviewTrack.scrollLeft <= 1) || (delta > 0 && reviewMax() - reviewTrack.scrollLeft <= 1)) return;
+      event.preventDefault();
+      reviewTrack.classList.add('wheeling');
+      reviewTrack.scrollLeft += delta;
+      clearTimeout(wheelTimer);
+      wheelTimer = setTimeout(() => {
+        reviewTrack.classList.remove('wheeling');
+        scrollReview(Math.round(reviewTrack.scrollLeft / reviewStep()) * reviewStep());
+      }, 160);
+    }, { passive: false });
+    new ResizeObserver(updateReviews).observe(reviewTrack);
+    updateReviews();
+  }
+
   const videoTrack = document.querySelector('.video-track');
   const videoPrevious = document.querySelector('[data-video-prev]');
   const videoNext = document.querySelector('[data-video-next]');
