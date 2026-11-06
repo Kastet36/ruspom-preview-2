@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-11-06T10:13:41.200Z",
+  "navigatesToCatalogue": true,
+  "results": [
+    {
+      "width": 320,
+      "pageOverflow": false,
+      "sectionOverflow": false,
+      "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
+      "buttonRightAligned": true,
+      "copyLeftAligned": true,
+      "allButtonsMatch": true,
+      "bodyStyleMatches": true,
+      "captionHeadingCount": 0
+    },
+    {
+      "width": 390,
+      "pageOverflow": false,
+      "sectionOverflow": false,
+      "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
+      "buttonRightAligned": true,
+      "copyLeftAligned": true,
+      "allButtonsMatch": true,
+      "bodyStyleMatches": true,
+      "captionHeadingCount": 0
+    },
+    {
+      "width": 781,
+      "pageOverflow": false,
+      "sectionOverflow": false,
+      "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
+      "buttonRightAligned": true,
+      "copyLeftAligned": true,
+      "allButtonsMatch": true,
+      "bodyStyleMatches": true,
+      "captionHeadingCount": 0
+    },
+    {
+      "width": 1000,
+      "pageOverflow": false,
+      "sectionOverflow": false,
+      "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
+      "buttonRightAligned": true,
+      "copyLeftAligned": true,
+      "allButtonsMatch": true,
+      "bodyStyleMatches": true,
+      "captionHeadingCount": 0
+    },
+    {
+      "width": 1440,
+      "pageOverflow": false,
+      "sectionOverflow": false,
+      "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
+      "buttonRightAligned": true,
+      "copyLeftAligned": true,
+      "allButtonsMatch": true,
+      "bodyStyleMatches": true,
+      "captionHeadingCount": 0
+    },
+    {
+      "width": 1920,
+      "pageOverflow": false,
+      "sectionOverflow": false,
+      "text": "В каталоге собраны планировки, комплектации и цены. Сравните варианты и выберите подходящий. Запросите полный каталог проектов!",
+      "buttonRightAligned": true,
+      "copyLeftAligned": true,
+      "allButtonsMatch": true,
+      "bodyStyleMatches": true,
+      "captionHeadingCount": 0
+    }
+  ]
+}
