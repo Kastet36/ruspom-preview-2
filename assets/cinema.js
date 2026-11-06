@@ -179,14 +179,12 @@
   if (reviewTrack) {
     const reviewPrevious = document.querySelector('[data-review-prev]');
     const reviewNext = document.querySelector('[data-review-next]');
-    const reviewCount = document.querySelector('.map-reviews-count');
     const reviewStep = () => reviewTrack.children[1].offsetLeft - reviewTrack.children[0].offsetLeft;
     const reviewMax = () => reviewTrack.scrollWidth - reviewTrack.clientWidth;
     const scrollReview = left => reviewTrack.scrollTo({ left: Math.max(0, Math.min(reviewMax(), left)), behavior: behavior(false) });
     function updateReviews() {
       reviewPrevious.disabled = reviewTrack.scrollLeft < 3;
       reviewNext.disabled = reviewMax() - reviewTrack.scrollLeft < 3;
-      reviewCount.textContent = String(Math.round(reviewTrack.scrollLeft / reviewStep()) + 1).padStart(2, '0') + ' / 05';
     }
     const moveReview = direction => scrollReview((Math.round(reviewTrack.scrollLeft / reviewStep()) + direction) * reviewStep());
     reviewPrevious.addEventListener('click', () => moveReview(-1));
