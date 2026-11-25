@@ -1,22 +1,27 @@
 [
   {
-    "title": "Видеоотзыв",
-    "poster": "assets/cinema/preview-12.webp",
-    "embedUrl": null
+    "title": "Год жизни в каркасном доме",
+    "poster": "assets/cinema/video-456240156.jpg",
+    "embedUrl": "https://vk.ru/video_ext.php?oid=-26809331&id=456240156&hash=1be7e46994a92443&hd=3"
   },
   {
-    "title": "Видеоотзыв",
-    "poster": "assets/cinema/preview-11.webp",
-    "embedUrl": null
+    "title": "Каркасный дом для семьи из трёх человек",
+    "poster": "assets/cinema/video-456240105.webp",
+    "embedUrl": "https://vk.ru/video_ext.php?oid=-26809331&id=456240105&hash=f12fdba099da62f9&hd=3"
   },
   {
-    "title": "Видеоотзыв",
-    "poster": "assets/cinema/preview-09.webp",
-    "embedUrl": null
+    "title": "Дом 110 м²: обзор и стоимость",
+    "poster": "assets/cinema/video-456240103.webp",
+    "embedUrl": "https://vk.ru/video_ext.php?oid=-26809331&id=456240103&hash=e90876fa91d85173&hd=3"
   },
   {
-    "title": "Видеоотзыв",
-    "poster": "assets/cinema/preview-08.webp",
-    "embedUrl": null
+    "title": "Проект TALO-71: отзыв заказчика",
+    "poster": "assets/cinema/video-456240093.jpg",
+    "embedUrl": "https://vk.ru/video_ext.php?oid=-26809331&id=456240093&hash=cd6b69f41d3af309&hd=3"
+  },
+  {
+    "title": "Строительство в ипотеку: отзыв семьи",
+    "poster": "assets/cinema/video-456240065.jpg",
+    "embedUrl": "https://vk.ru/video_ext.php?oid=-26809331&id=456240065&hash=f1e10bf92d3473d4&hd=3"
   }
 ]

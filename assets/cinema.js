@@ -224,7 +224,9 @@
   const videoNext = document.querySelector('[data-video-next]');
   const videoDialog = document.querySelector('.video-viewer');
   let videos = [...videoTrack.querySelectorAll('.video-card')].map(card => ({
-    title: 'Видеоотзыв', poster: card.querySelector('img').getAttribute('src'), embedUrl: null
+    title: card.querySelector('figcaption>span').textContent,
+    poster: card.querySelector('img').getAttribute('src'),
+    embedUrl: card.querySelector('[data-video]').dataset.embedUrl || null
   }));
   let videoOrigin;
   let videoScroll = 0;
@@ -258,7 +260,7 @@
   new ResizeObserver(updateVideos).observe(videoTrack);
   updateVideos();
 
-  fetch('assets/cinema/videos.json').then(response => {
+  fetch('assets/cinema/videos.json?v=2').then(response => {
     if (!response.ok) throw new Error('Video data unavailable');
     return response.json();
   }).then(items => {
@@ -277,7 +279,7 @@
       return card;
     }));
     updateVideos();
-  }).catch(() => { /* The static placeholder gallery remains available. */ });
+  }).catch(() => { /* The static video gallery remains available. */ });
 
   videoTrack.addEventListener('click', event => {
     const button = event.target.closest('[data-video]');
@@ -289,11 +291,11 @@
     }
     let url;
     try { url = new URL(item.embedUrl); } catch { return; }
-    if (url.protocol !== 'https:' || !['vk.com', 'vkvideo.ru'].includes(url.hostname) || url.pathname !== '/video_ext.php') return;
+    if (url.protocol !== 'https:' || !['vk.ru', 'vk.com', 'vkvideo.ru'].includes(url.hostname) || url.pathname !== '/video_ext.php') return;
     const frame = document.createElement('iframe');
     frame.src = url.href;
     frame.title = item.title;
-    frame.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
+    frame.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock';
     frame.allowFullscreen = true;
     frame.referrerPolicy = 'strict-origin-when-cross-origin';
     videoDialog.querySelector('.video-player').replaceChildren(frame);
