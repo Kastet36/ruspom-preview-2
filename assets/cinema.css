@@ -98,3 +98,7 @@ html{scroll-behavior:smooth;scrollbar-gutter:stable}body{overflow-x:hidden}butto
 @media(max-width:780px){.map-reviews{padding:32px 0 38px}.map-reviews-heading{align-items:flex-start;flex-wrap:wrap;gap:24px;margin-bottom:24px}.map-reviews-controls{margin-left:auto;gap:20px}.map-reviews-source,.map-review-link{font-size:13px}.map-reviews-track{gap:16px}.map-review-card{flex-basis:100%;padding:24px}.map-review-card h3{font-size:18px}.map-review-card blockquote p{font-size:15px}}
 
 .footer-legal{margin:24px auto 0}
+
+/* Construction duration reuses the hero proof typography. */
+.stages-heading{margin-bottom:0}.stages-duration{margin:0;flex-shrink:0}.stages-duration .proof__num{color:var(--gold)}
+@media(max-width:780px){.stages-duration{margin-top:24px}}
