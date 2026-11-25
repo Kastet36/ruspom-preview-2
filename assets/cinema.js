@@ -339,16 +339,6 @@
     clearTimeout(timer);
     timer = setTimeout(() => notice.classList.remove('visible'), 5000);
   }
-  document.querySelectorAll('[data-catalog]').forEach(button => {
-    button.addEventListener('click', event => {
-      event.preventDefault();
-      document.querySelector('#catalogue').scrollIntoView({ behavior: behavior(false), block: 'start' });
-      document.querySelector('#catalogue-title').focus({ preventScroll: true });
-    });
-  });
-  document.querySelector('[data-catalog-request]').addEventListener('click', () => {
-    showNotice('Получение каталога подключим после согласования.');
-  });
 
   const comparison = document.querySelector('[data-finish-comparison]');
   if (!comparison) return;
