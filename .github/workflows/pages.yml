@@ -32,6 +32,8 @@ jobs:
           test -s _site/index.html
           test -s _site/assets/cinema.css
           test -s _site/assets/cinema.js
+      - name: Verify preview indexing is disabled
+        run: python3 scripts/check-noindex.py _site
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
