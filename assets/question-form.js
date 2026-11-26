@@ -4,7 +4,6 @@
   const form = modal.querySelector('form');
   const phone = form.elements.phone;
   const consent = form.elements.consent;
-  const question = form.elements.question;
   const status = form.querySelector('.catalog-form-status');
   let opener;
   let scrollPosition = 0;
@@ -51,7 +50,7 @@
   });
 
   phone.addEventListener('input', () => { error(phone, 'question-phone-error', ''); clearStatus(); });
-  question.addEventListener('input', () => { error(question, 'question-message-error', ''); clearStatus(); });
+  form.elements.question.addEventListener('input', clearStatus);
   form.elements.name.addEventListener('input', clearStatus);
   consent.addEventListener('change', () => { error(consent, 'question-consent-error', ''); clearStatus(); });
   form.addEventListener('submit', event => {
@@ -60,11 +59,8 @@
     const digits = phone.value.replace(/\D/g, '');
     const phoneMessage = !digits ? 'Укажите номер телефона.' : digits.length < 10 || digits.length > 15 || !/^[+\d\s()\-]+$/.test(phone.value.trim()) ? 'Проверьте номер телефона.' : '';
     error(phone, 'question-phone-error', phoneMessage);
-    const questionMessage = question.value.trim() ? '' : 'Напишите ваш вопрос.';
-    error(question, 'question-message-error', questionMessage);
     error(consent, 'question-consent-error', consent.checked ? '' : 'Подтвердите согласие на обработку персональных данных.');
     if (phoneMessage) { phone.focus(); return; }
-    if (questionMessage) { question.focus(); return; }
     if (!consent.checked) { consent.focus(); return; }
     // Review-only form, matching the catalogue: no request or persistence.
     status.textContent = 'Форма заполнена. В этой версии заявки не отправляются.';
